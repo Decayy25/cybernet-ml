@@ -1,20 +1,43 @@
 {
   "name": "cybernet-ml",
   "version": "1.0.0",
-  "description": "",
+  "description": "Simple Naive Bayes Classifier written in TypeScript",
+  "keywords": [
+    "machine-learning",
+    "naive-bayes",
+    "bayes",
+    "classifier",
+    "typescript"
+  ],
+  "author": "Moch Rizqi Hermawan",
+  "license": "MIT",
+  "type": "module",
   "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    }
+  },
   "files": [
     "dist"
   ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsup src/index.ts --format esm,cjs --dts"
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "prepare": "npm run build",
+    "clean": "rimraf dist"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Decayy25/cybernet-ml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Decayy25/cybernet-ml/issues"
+  },
+  "homepage": "https://github.com/Decayy25/cybernet-ml#readme",
   "devDependencies": {
     "@types/node": "^26.0.1",
     "tsup": "^8.5.1",
